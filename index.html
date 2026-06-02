@@ -322,11 +322,23 @@ function removeDiacritics(str){
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D");
 }
 
+  /*
 function containsBadWord(value){
   const clean = removeDiacritics(value).toLowerCase().replace(/\s+/g,"");
   return BAD_WORDS.some(w => {
     const wClean = removeDiacritics(w).toLowerCase();
     return clean.includes(wClean);
+  });
+}*/
+
+  function containsBadWord(value) {
+  const clean = removeDiacritics(value).toLowerCase();
+  // Tách câu thành các từ riêng biệt để kiểm tra từng từ một
+  const words = clean.split(/\s+/);
+  
+  return words.some(word => {
+    // Chỉ chặn nếu từ đó trùng khớp chính xác với danh sách cấm
+    return BAD_WORDS.some(bad => removeDiacritics(bad).toLowerCase() === word);
   });
 }
 
