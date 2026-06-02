@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Lớp Tiếng Anh 8 Ms Hoa 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --mint: #00c896;
+            --mint-light: #e6faf5;
+            --mint-mid: #7fe8cf;
+            --sky: #4fb8f0;
+            --sky-light: #e8f6fd;
+            --peach: #ff8c69;
+            --peach-light: #fff0eb;
+            --lavender: #9d7fe8;
+            --lav-light: #f0ebfd;
+            --yellow: #ffc94d;
+            --yellow-light: #fff8e6;
+            --text: #1a1a2e;
+            --muted: #6b7280;
+            --border: #e8ecf3;
+            --white: #ffffff;
+            --bg: #f5f8ff;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans',sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden
+        }
+
+        .blob-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .35;
+            animation: blobFloat 8s ease-in-out infinite
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--mint);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--sky);
+            bottom: 20%;
+            left: -150px;
+            animation-delay: 3s
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--peach);
+            top: 40%;
+            right: 10%;
+            animation-delay: 5s
+        }
+
+        @keyframes blobFloat {
+            0%,100% {
+                transform: translate(0,0) scale(1)
+            }
+
+            50% {
+                transform: translate(20px,-30px) scale(1.05)
+            }
+        }
+
+        .wrap {
+            max-width: 1140px;
+            margin: auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1
+        }
+
+        section {
+            padding: 80px 0
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 16px 0;
+            backdrop-filter: blur(16px);
+            background: rgba(245,248,255,.85);
+            border-bottom: 1px solid rgba(0,200,150,.15);
+            transition: .3s
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            font-family: 'Nunito',sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -.3px
+        }
+
+            .logo span {
+                color: var(--mint)
+            }
+
+        .nav-cta {
+            background: var(--mint);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: .25s
+        }
+
+            .nav-cta:hover {
+                background: #00a87d;
+                transform: translateY(-1px)
+            }
+
+        .hero {
+            padding: 140px 0 80px;
+            position: relative
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
+            align-items: center
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--mint-light);
+            color: #00a87d;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            border: 1px solid rgba(0,200,150,.25);
+            margin-bottom: 24px;
+            animation: fadeUp .6s ease both
+        }
+
+            .pill::before {
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--mint);
+                animation: pulse 2s infinite
+            }
+
+        @keyframes pulse {
+            0%,100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .4
+            }
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            animation: fadeUp .6s .2s ease both
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            animation: fadeUp .6s .3s ease both
+        }
+
+        .btn-primary {
+            background: var(--mint);
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: .25s;
+            box-shadow: 0 8px 24px rgba(0,200,150,.3)
+        }
+
+            .btn-primary:hover {
+                background: #00a87d;
+                transform: translateY(-2px);
+                box-shadow: 0 12px 30px rgba(0,200,150,.4)
+            }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            padding: 16px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid var(--border);
+            transition: .25s
+        }
+
+            .btn-outline:hover {
+                border-color: var(--mint);
+                color: var(--mint);
+                transform: translateY(-2px)
+            }
+
+        .count-badge {
+            margin-top: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            animation: fadeUp .6s .4s ease both;
+            box-shadow: 0 4px 14px rgba(0,0,0,.05)
+        }
+
+            .count-badge strong {
+                color: var(--mint);
+                font-size: 20px;
+                font-weight: 800
+            }
+
+        .avatars {
+            display: flex
+        }
+
+        .av {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-right: -8px;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff
+        }
+
+        .av1 {
+            background: #4fb8f0
+        }
+
+        .av2 {
+            background: #9d7fe8
+        }
+
+        .av3 {
+            background: #ff8c69
+        }
+
+        .av4 {
+            background: #ffc94d
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            padding: 28px;
+            box-shadow: 0 16px 48px rgba(0,0,0,.06);
+            animation: fadeUp .6s .2s ease both;
+            position: relative;
+            overflow: hidden
+        }
+
+            .info-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg,var(--mint),var(--sky),var(--lavender))
+            }
+
+            .info-card h3 {
+                font-family: 'Nunito',sans-serif;
+                font-weight: 800;
+                margin-bottom: 20px;
+                color: var(--muted);
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                font-size: 12px
+            }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0f3f9
+        }
+
+            .info-row:last-child {
+                border-bottom: none
+            }
+
+        .info-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .info-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0
+        }
+
+        .icon-green {
+            background: var(--mint-light)
+        }
+
+        .icon-sky {
+            background: var(--sky-light)
+        }
+
+        .icon-peach {
+            background: var(--peach-light)
+        }
+
+        .icon-lav {
+            background: var(--lav-light)
+        }
+
+        .icon-yellow {
+            background: var(--yellow-light)
+        }
+
+        .info-val {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text)
+        }
+
+        .price-val {
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--mint)
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 52px
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--mint-light);
+            color: #00a87d;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 14px
+        }
+
+        h2 {
+            font-family: 'Nunito',sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            letter-spacing: -.5px;
+            margin-bottom: 12px
+        }
+
+        .section-desc {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: auto
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px
+        }
+
+        .feat-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            transition: .3s;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp .5s ease both
+        }
+
+            .feat-card:nth-child(1) {
+                animation-delay: .1s
+            }
+
+            .feat-card:nth-child(2) {
+                animation-delay: .2s
+            }
+
+            .feat-card:nth-child(3) {
+                animation-delay: .3s
+            }
+
+            .feat-card:nth-child(4) {
+                animation-delay: .4s
+            }
+
+            .feat-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 16px 40px rgba(0,0,0,.08);
+                border-color: transparent
+            }
+
+            .feat-card::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 24px;
+                opacity: 0;
+                background: linear-gradient(135deg,rgba(0,200,150,.05),rgba(79,184,240,.05));
+                transition: .3s
+            }
+
+            .feat-card:hover::after {
+                opacity: 1
+            }
+
+        .feat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px
+        }
+
+        .feat-card h3 {
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 8px
+        }
+
+        .feat-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6
+        }
+
+        .reg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 48px
+        }
+
+        .form-card, .list-card {
+            background: var(--white);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,.04)
+        }
+
+            .form-card h3, .list-card h3 {
+                font-family: 'Nunito',sans-serif;
+                font-weight: 800;
+                font-size: 20px;
+                margin-bottom: 24px
+            }
+
+        .form-group {
+            margin-bottom: 18px
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 14px;
+                color: var(--text)
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1.5px solid var(--border);
+            font-size: 15px;
+            font-family: 'Plus Jakarta Sans',sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            transition: .2s;
+            outline: none
+        }
+
+            .form-control:focus {
+                border-color: var(--mint);
+                background: #fff;
+                box-shadow: 0 0 0 4px rgba(0,200,150,.1)
+            }
+
+            .form-control::placeholder {
+                color: #b0b8c9
+            }
+
+            .form-control.invalid {
+                border-color: #f87171;
+                box-shadow: 0 0 0 4px rgba(248,113,113,.12)
+            }
+
+        .field-err {
+            display: none;
+            color: #dc2626;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 600
+        }
+
+            .field-err.show {
+                display: block
+            }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--mint);
+            color: #fff;
+            padding: 16px;
+            border-radius: 14px;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans',sans-serif;
+            transition: .25s;
+            box-shadow: 0 6px 20px rgba(0,200,150,.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px
+        }
+
+            .submit-btn:hover {
+                background: #00a87d;
+                transform: translateY(-1px);
+                box-shadow: 0 10px 28px rgba(0,200,150,.4)
+            }
+
+            .submit-btn:active {
+                transform: scale(.99)
+            }
+
+            .submit-btn:disabled {
+                opacity: .6;
+                cursor: not-allowed;
+                transform: none
+            }
+
+        .success-msg {
+            margin-top: 14px;
+            padding: 14px;
+            border-radius: 12px;
+            background: var(--mint-light);
+            color: #007a5a;
+            font-weight: 600;
+            font-size: 14px;
+            display: none;
+            animation: fadeUp .3s ease;
+            border: 1px solid rgba(0,200,150,.2)
+        }
+
+            .success-msg.show {
+                display: flex;
+                align-items: center;
+                gap: 8px
+            }
+
+        .error-msg {
+            margin-top: 14px;
+            padding: 14px;
+            border-radius: 12px;
+            background: #fff0eb;
+            color: #b94b22;
+            font-weight: 600;
+            font-size: 14px;
+            display: none;
+            border: 1px solid rgba(255,140,105,.2)
+        }
+
+            .error-msg.show {
+                display: block
+            }
+
+        .list-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px
+        }
+
+        .count-chip {
+            background: var(--mint-light);
+            color: #007a5a;
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .student-list {
+            max-height: 420px;
+            overflow-y: auto
+        }
+
+            .student-list::-webkit-scrollbar {
+                width: 4px
+            }
+
+            .student-list::-webkit-scrollbar-track {
+                background: #f0f3f9;
+                border-radius: 4px
+            }
+
+            .student-list::-webkit-scrollbar-thumb {
+                background: var(--mint-mid);
+                border-radius: 4px
+            }
+
+        .student-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: var(--bg);
+            margin-bottom: 10px;
+            animation: fadeIn .4s ease;
+            border: 1px solid transparent;
+            transition: .2s
+        }
+
+            .student-item:hover {
+                border-color: var(--mint-mid);
+                background: #fff
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0)
+            }
+        }
+
+        .s-left {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+        /* STT badge thay cho avatar chữ */
+        .s-stt {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 15px;
+            color: #fff;
+            flex-shrink: 0;
+            font-family: 'Nunito',sans-serif
+        }
+
+        .s-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text)
+        }
+
+        .s-class {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 1px
+        }
+
+        .s-badge {
+            background: var(--mint-light);
+            color: #007a5a;
+            padding: 4px 10px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--muted)
+        }
+
+        .empty-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            opacity: .4
+        }
+
+        .empty-state p {
+            font-size: 14px
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1
+        }
+
+            footer strong {
+                color: var(--mint)
+            }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: .6s ease
+        }
+
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0)
+            }
+
+        @media(max-width:900px) {
+            .hero-grid, .reg-grid, .features {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 38px
+            }
+
+            h2 {
+                font-size: 30px
+            }
+
+            nav .nav-cta {
+                display: none
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:480px) {
+            .features {
+                grid-template-columns: 1fr
+            }
+
+            section {
+                padding: 60px 0
+            }
+
+            .hero {
+                padding: 110px 0 60px
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav>
+        <div class="wrap nav-inner">
+            <a href="#" class="logo">English<span>THCS</span></a>
+            <a href="#register" class="nav-cta">Đăng ký ngay →</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-grid">
+                <div>
+                    <div class="pill">✨ Khai giảng lớp Tiếng Anh 8 Ms Hoa</div>
+                    <p class="hero-sub">Dành cho các bạn có mong muốn học tốt môn Tiếng Anh 8 (2026-2027)</p>
+                    <div class="hero-btns">
+                        <a href="#register" class="btn-primary">Đăng ký giữ chỗ →</a>
+                        <a href="#content" class="btn-outline">Xem nội dung</a>
+                    </div>
+                    <div class="count-badge">
+                        <div class="avatars">
+                            <div class="av av1">A</div><div class="av av2">B</div>
+                            <div class="av av3">C</div><div class="av av4">+</div>
+                        </div>
+                        <span><strong id="heroCount">0</strong> học sinh đã đăng ký</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>📋 Thông tin lớp học</h3>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-green">📅</div>Khai giảng dự kiến</div>
+                        <div class="info-val">07/2026</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-sky">🗓</div>Lịch học</div>
+                        <div class="info-val">Thứ 3 & 6</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-lav">⏰</div>Giờ học</div>
+                        <div class="info-val">17:30 - 19:00</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-peach">📍</div>Địa điểm</div>
+                        <div class="info-val">Thôn 3, Vạn Phúc</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-yellow">👥</div>Sĩ số</div>
+                        <div class="info-val">Tối đa ~28 HS</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><div class="info-icon icon-green">💰</div>Học phí</div>
+                        <div class="price-val">60.000đ / buổi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-tag">Nội dung chương trình</div>
+                <p class="section-desc">Chương trình bám sát chuẩn THCS và cấu trúc đề thi vào 10</p>
+            </div>
+            <div class="features">
+                <div class="feat-card">
+                    <div class="feat-icon icon-green">📘</div>
+                    <h3>Ngữ pháp hệ thống</h3>
+                    <p>Kiến thức từ cơ bản đến nâng cao — phương pháp dễ nhớ dễ áp dụng.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon icon-sky">📝</div>
+                    <h3>Luyện đề chuẩn</h3>
+                    <p>Bài tập bám sát chương trình THCS — mục tiêu thi tuyển sinh vào 10.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon icon-lav">📊</div>
+                    <h3>Kiểm tra định kỳ</h3>
+                    <p>Bài test thường xuyên — cập nhật kết quả cho phụ huynh.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-icon icon-peach">🏫</div>
+                    <h3>Lớp nhỏ cá nhân hoá</h3>
+                    <p>Tối đa ~ 28 học sinh — quan tâm sát sao từng em.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="section-tag">Thông tin đăng ký</div>
+                <p class="section-desc">Chỉ có <strong>28</strong> suất, chọn theo thứ tự đăng ký.</p>
+            </div>
+            <div class="reg-grid">
+                <div class="form-card reveal">
+                    <h3>📋 Thông tin đăng ký</h3>
+                    <form id="regForm" novalidate>
+
+                        <div class="form-group">
+                            <label>Họ và tên học sinh</label>
+                            <input type="text" class="form-control" id="studentName"
+                                   placeholder="VD: Nguyễn Minh Anh" autocomplete="off">
+                            <div class="field-err" id="errStudentName"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Đang học lớp</label>
+                            <input type="text" class="form-control" id="className"
+                                   placeholder="VD: 7A2" maxlength="3" autocomplete="off">
+                            <div class="field-err" id="errClassName"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Họ tên phụ huynh</label>
+                            <input type="text" class="form-control" id="parentName"
+                                   placeholder="VD: Nguyễn Văn An" autocomplete="off">
+                            <div class="field-err" id="errParentName"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phone"
+                                   placeholder="VD: 0912345678" maxlength="10" autocomplete="off" inputmode="numeric">
+                            <div class="field-err" id="errPhone"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="btnText">✅ Xác nhận đăng ký</span>
+                        </button>
+                        <div class="success-msg" id="successMsg">🎉 Đăng ký thành công! Cô sẽ liên hệ sớm.</div>
+                        <div class="error-msg" id="errorMsg">❌ Có lỗi xảy ra. Vui lòng thử lại.</div>
+                    </form>
+                </div>
+
+                <div class="list-card reveal">
+                    <div class="list-top">
+                        <h3>👨‍🎓 Danh sách học sinh</h3>
+                        <div class="count-chip"><span id="countBadge">0</span> / 28 suất</div>
+                    </div>
+                    <div class="student-list" id="studentList">
+                        <div class="empty-state">
+                            <div class="empty-icon">📝</div>
+                            <p>Chưa có học sinh đăng ký.<br>Hãy là người đầu tiên!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <p>© 2026 <strong>Lớp Tiếng Anh 8 cô Hoa</strong> · Thôn 3, Vạn Phúc - Nam Phù - Hà Nội</p>
+            <p style="margin-top:6px;font-size:13px;opacity:.7">Khai giảng 07/2026</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp }
+            from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBQikhSJUX2C4jGo2RCQy0YmAQVeq6Qos4",
+            authDomain: "dangky-mshoa.firebaseapp.com",
+            projectId: "dangky-mshoa",
+            storageBucket: "dangky-mshoa.firebasestorage.app",
+            messagingSenderId: "471492146396",
+            appId: "1:471492146396:web:baabe84f5cb4e2e0797019"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        /* ============================================================
+           VALIDATION HELPERS
+           ============================================================ */
+
+        // Bảng chữ cái tiếng Việt (chỉ chấp nhận các ký tự này + dấu cách)
+        // Bao gồm đầy đủ chữ cái có dấu tiếng Việt
+        const VI_CHARS = /^[abcdđeghiklmnopqrstuvxyABCDĐEGHIKLMNOPQRSTUVXYÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĨĩŨũƠơƯư\u1EA0-\u1EF9\s]+$/;
+
+
+        // Từ khoá nhạy cảm (không phân biệt hoa thường, bỏ dấu để so sánh)
+        const BAD_WORDS = [
+            "lon", "buoi", "cut", "daich", "dit", "cac", "chim", "buom",
+            "dkm", "dcm", "cl", "kon", "vl", "dm", "cmm", "đm", "địt",
+            "lồn", "buồi", "cặc", "chịm", "bướm", "cứt", "đĩ", "cặk",
+            "loz", "l0n", "non", "b*oi", "c*c", "d.m", "fuck", "sex", "cock",
+            "pussy", "shit", "ass", "bitch", "dick", "trim", "clgt"
+        ];
+
+        // Bỏ dấu tiếng Việt để so sánh từ khoá
+        function removeDiacritics(str) {
+            return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+        }
+
+        function containsBadWord(value) {
+            const clean = removeDiacritics(value).toLowerCase().replace(/\s+/g, "");
+            return BAD_WORDS.some(w => {
+                const wClean = removeDiacritics(w).toLowerCase();
+                return clean.includes(wClean);
+            });
+        }
+
+        function validateName(value, fieldId, errId) {
+            const el = document.getElementById(fieldId);
+            const err = document.getElementById(errId);
+            const v = value.trim();
+            // Chỉ chữ tiếng Việt + dấu cách
+            if (!VI_CHARS.test(v)) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Chỉ được nhập chữ cái tiếng Việt, không có số hoặc ký tự đặc biệt.";
+                err.classList.add("show"); return false;
+            }
+            // Kiểm tra số chữ (không quá 4 từ)
+            const words = v.split(/\s+/).filter(Boolean);
+            if (words.length > 4) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Họ tên không được quá 4 chữ.";
+                err.classList.add("show"); return false;
+            }
+            if (words.length === 0) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Vui lòng nhập họ tên.";
+                err.classList.add("show"); return false;
+            }
+            // Mỗi từ phải có tối thiểu 2 ký tự
+            const shortWord = words.find(w => w.length < 2);
+            if (shortWord) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Mỗi chữ trong tên phải có ít nhất 2 ký tự (ví dụ: \"Lê\" thay vì \"L\").";
+                err.classList.add("show"); return false;
+            }
+            // Kiểm tra từ khoá nhạy cảm
+            if (containsBadWord(v)) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Họ tên không hợp lệ, vui lòng kiểm tra lại.";
+                err.classList.add("show"); return false;
+            }
+            el.classList.remove("invalid"); err.classList.remove("show"); return true;
+        }
+
+        function validateClass(value) {
+            const el = document.getElementById("className");
+            const err = document.getElementById("errClassName");
+            const v = value.trim().toUpperCase();
+            // Dạng: [6-9]A[1-9] hoặc [6-9]A[1-9][0-9] — tối đa 3 ký tự
+            if (!/^[6-9]A[1-9]$/.test(v)) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Nhập đúng dạng: 6A1 đến 9A9 (ví dụ: 7A3).";
+                err.classList.add("show"); return false;
+            }
+            el.classList.remove("invalid"); err.classList.remove("show"); return true;
+        }
+
+        function validatePhone(value) {
+            const el = document.getElementById("phone");
+            const err = document.getElementById("errPhone");
+            const v = value.trim();
+            if (!/^0[0-9]{9}$/.test(v)) {
+                el.classList.add("invalid");
+                err.textContent = "⚠ Số điện thoại phải gồm đúng 10 chữ số, bắt đầu bằng 0.";
+                err.classList.add("show"); return false;
+            }
+            el.classList.remove("invalid"); err.classList.remove("show"); return true;
+        }
+
+        /* ============================================================
+           LIVE INPUT GUARDS — chặn gõ ký tự ngay lập tức
+           ============================================================ */
+
+        // Họ tên: chỉ cho gõ chữ cái + dấu cách
+        function guardNameInput(e) {
+            const allowed = /^[abcdđeghiklmnopqrstuvxyABCDĐEGHIKLMNOPQRSTUVXYÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĨĩŨũƠơƯư\u1EA0-\u1EF9\s]$/;
+            if (e.key.length === 1 && !allowed.test(e.key)) e.preventDefault();
+        }
+
+        // SĐT: chỉ cho gõ số 0–9
+        function guardPhoneInput(e) {
+            if (e.key.length === 1 && !/[0-9]/.test(e.key)) e.preventDefault();
+        }
+
+        // Lớp: chỉ cho gõ số và chữ (tối đa 3 ký tự)
+        function guardClassInput(e) {
+            const allowed = /^[0-9a-lA-L]$/;
+            if (e.key.length === 1 && !allowed.test(e.key)) e.preventDefault();
+        }
+
+        document.getElementById("studentName").addEventListener("keydown", guardNameInput);
+        document.getElementById("parentName").addEventListener("keydown", guardNameInput);
+        document.getElementById("phone").addEventListener("keydown", guardPhoneInput);
+        document.getElementById("className").addEventListener("keydown", guardClassInput);
+
+        // Cũng lọc khi paste
+        function filterNamePaste(e) {
+            e.preventDefault();
+            const text = (e.clipboardData || window.clipboardData).getData("text");
+            const clean = text.replace(/[^abcdđeghiklmnopqrstuvxyABCDĐEGHIKLMNOPQRSTUVXYÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĨĩŨũƠơƯư\u1EA0-\u1EF9\s]/g, "");
+            document.execCommand("insertText", false, clean);
+        }
+        function filterPhonePaste(e) {
+            e.preventDefault();
+            const text = (e.clipboardData || window.clipboardData).getData("text");
+            const clean = text.replace(/[^0-9]/g, "").slice(0, 10);
+            document.execCommand("insertText", false, clean);
+        }
+        document.getElementById("studentName").addEventListener("paste", filterNamePaste);
+        document.getElementById("parentName").addEventListener("paste", filterNamePaste);
+        document.getElementById("phone").addEventListener("paste", filterPhonePaste);
+
+        /* ============================================================
+           SUBMIT
+           ============================================================ */
+        const form = document.getElementById("regForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const successMsg = document.getElementById("successMsg");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const studentName = document.getElementById("studentName").value.trim();
+            const className = document.getElementById("className").value.trim().toUpperCase();
+            const parentName = document.getElementById("parentName").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+
+            const ok = [
+                validateName(studentName, "studentName", "errStudentName"),
+                validateClass(className),
+                validateName(parentName, "parentName", "errParentName"),
+                validatePhone(phone)
+            ].every(Boolean);
+            if (!ok) return;
+
+            btnText.textContent = "⏳ Đang gửi...";
+            submitBtn.disabled = true;
+            try {
+                await addDoc(collection(db, "registrations"), {
+                    studentName, className, parentName, phone,
+                    createdAt: serverTimestamp()
+                });
+                form.reset();
+                successMsg.classList.add("show");
+                errorMsg.classList.remove("show");
+                setTimeout(() => successMsg.classList.remove("show"), 5000);
+            } catch (err) {
+                console.error(err);
+                errorMsg.classList.add("show");
+                successMsg.classList.remove("show");
+                setTimeout(() => errorMsg.classList.remove("show"), 4000);
+            } finally {
+                btnText.textContent = "✅ Xác nhận đăng ký";
+                submitBtn.disabled = false;
+            }
+        });
+
+        /* ============================================================
+           REALTIME LIST — STT thay cho avatar chữ
+           ============================================================ */
+        const COLORS = ["#00c896", "#4fb8f0", "#9d7fe8", "#ff8c69", "#ffc94d", "#e84f8c", "#4fc3f7"];
+        function getColor(idx) { return COLORS[(idx - 1) % COLORS.length]; }
+
+        const studentList = document.getElementById("studentList");
+        const countBadge = document.getElementById("countBadge");
+        const heroCount = document.getElementById("heroCount");
+
+        const q = query(collection(db, "registrations"), orderBy("createdAt", "asc")); // asc → STT đúng thứ tự đăng ký
+
+        onSnapshot(q, (snap) => {
+            countBadge.textContent = snap.size;
+            heroCount.textContent = snap.size;
+            if (snap.size === 0) {
+                studentList.innerHTML = `<div class="empty-state"><div class="empty-icon">📝</div><p>Chưa có học sinh đăng ký.<br>Hãy là người đầu tiên!</p></div>`;
+                return;
+            }
+            studentList.innerHTML = "";
+            let stt = 0;
+            snap.forEach(doc => {
+                stt++;
+                const d = doc.data();
+                const el = document.createElement("div");
+                el.className = "student-item";
+                const color = getColor(stt);
+                el.innerHTML = `
+          <div class="s-left">
+            <div class="s-stt" style="background:${color}">${stt}</div>
+            <div>
+              <div class="s-name">${d.studentName}</div>
+              <div class="s-class">Lớp ${d.className}</div>
+            </div>
+          </div>
+          <div class="s-badge">✓ Đã đăng ký</div>`;
+                studentList.appendChild(el);
+            });
+        });
+    </script>
+
+    <script>
+        const observer = new IntersectionObserver(
+            entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible") }),
+            { threshold: .12 }
+        );
+        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
