@@ -105,6 +105,8 @@ h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:40px;letter-spacing
 .s-stt{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;flex-shrink:0;font-family:'Nunito',sans-serif}
 .s-name{font-weight:700;font-size:14px;color:var(--text)}
 .s-class{font-size:12px;color:var(--muted);margin-top:1px}
+.s-phone{font-size:12px;color:var(--muted);margin-top:1px}
+.s-parent{font-size:12px;color:var(--muted);margin-top:1px}
 .s-badge{background:var(--mint-light);color:#007a5a;padding:4px 10px;border-radius:40px;font-size:12px;font-weight:700;white-space:nowrap}
 .empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
 .empty-icon{font-size:40px;margin-bottom:12px;opacity:.4}
@@ -262,7 +264,7 @@ footer strong{color:var(--mint)}
 
       <div class="list-card reveal">
         <div class="list-top">
-          <h3>👨‍🎓 Danh sách học sinh</h3>
+          <h3>👨‍🎓 Đã đăng ký</h3>
           <div class="count-chip"><span id="countBadge">0</span> / 28 suất</div>
         </div>
         <div class="student-list" id="studentList">
@@ -528,10 +530,12 @@ onSnapshot(q,(snap)=>{
         <div class="s-stt" style="background:${color}">${stt}</div>
         <div>
           <div class="s-name">${d.studentName}</div>
-          <div class="s-class">Lớp ${d.className} - ${d.phone}</div>
+          <div class="s-class">Lớp: ${d.className}</div>
+          <div class="s-parent">PH: ${d.parentName} - ${d.phone}</div>
+          <div class="s-phone"> SĐT: ${d.phone}</div>
         </div>
       </div>
-      <div class="s-badge">✓ Đã đăng ký</div>`;
+      <div class="s-badge">✓</div>`;
     studentList.appendChild(el);
   });
 });
