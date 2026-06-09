@@ -234,7 +234,7 @@ footer strong{color:var(--mint)}
           </div>
 
           <div class="form-group">
-            <label>Học lớp 8... (tính theo năm học mới)</label>
+            <label>Học lớp 8... (năm học tới)</label>
             <input type="text" class="form-control" id="className"
               placeholder="VD: 8A1" maxlength="3" autocomplete="off">
             <div class="field-err" id="errClassName"></div>
@@ -388,10 +388,10 @@ function validateClass(value){
   const el = document.getElementById("className");
   const err = document.getElementById("errClassName");
   const v = value.trim().toUpperCase();
-  // Dạng: [6-9]A[1-9] hoặc [6-9]A[1-9][0-9] — tối đa 3 ký tự
-  if(!/^[6-9]A[1-9]$/.test(v)){
+  // Dạng: 8A[1-9] hoặc 8A, 8B... 8I tối đa 3 ký tự
+  if(!/^8[A-I][1-9]?$/.test(v)){
     el.classList.add("invalid");
-    err.textContent = "⚠ Nhập đúng dạng: 6A1 đến 9A9 (ví dụ: 7A3).";
+    err.textContent = "⚠ Nhập đúng dạng: 7A1 đến 7A9 hoặc 7A, 7B, 7C... 7I (ví dụ: 7A3).";
     err.classList.add("show"); return false;
   }
   el.classList.remove("invalid"); err.classList.remove("show"); return true;
