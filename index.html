@@ -391,7 +391,7 @@ function validateClass(value){
   // Dạng: 8A[1-9] hoặc 8A, 8B... 8I tối đa 3 ký tự
   if(!/^8[A-I][1-9]?$/.test(v)){
     el.classList.add("invalid");
-    err.textContent = "⚠ Nhập đúng dạng: 7A1 đến 7A9 hoặc 7A, 7B, 7C... 7I (ví dụ: 7A3).";
+    err.textContent = "⚠ Nhập đúng dạng: 8A1 đến 8A9 hoặc 8A, 8B, 8C... 8I (ví dụ: 8A3).";
     err.classList.add("show"); return false;
   }
   el.classList.remove("invalid"); err.classList.remove("show"); return true;
